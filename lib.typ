@@ -11,8 +11,7 @@
         number-align: center
     )
 
-    set math.vec(delim: "[")
-    set math.mat(delim: "[")
+    set par(linebreaks: "optimized")
 
     // title
     if (title != "") {
