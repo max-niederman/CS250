@@ -156,6 +156,8 @@
     )
 ]
 
+The truth tables show that $(A -> B) <-> A' or B$ and $(A -> B) -> ((A or C) -> (B or C))$ are tautologies, while the other wffs are neither tautologies nor contradictions.
+
 = Inference Rules
 
 == 9
