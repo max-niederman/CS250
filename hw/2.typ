@@ -40,10 +40,10 @@
 
     I will use $T$ to denote a truth and $F$ to denote falsehood.
 
-    + $A and (B or C) iff T and (F or T) iff T and T iff T$
-    + $(A and B) or C iff F or T iff T$
-    + $(A and B)' or C iff (A and B)' or T iff T$
-    + $A' or (B' and C)' iff F or (T and T)' iff F or F iff F$
+    + $A and (B or C) <-> T and (F or T) <-> T and T <-> T$
+    + $(A and B) or C <-> F or T <-> T$
+    + $(A and B)' or C <-> (A and B)' or T <-> T$
+    + $A' or (B' and C)' <-> F or (T and T)' <-> F or F <-> F$
 ]
 
 == 9
@@ -87,11 +87,11 @@
 #[
     #set enum(numbering: "a.")
 
-    + $H => K$
-    + $K => (H and A)$
-    + $K => H$
-    + $K <=> A$
-    + $(A or H) => K$
+    + $H -> K$
+    + $K -> (H and A)$
+    + $K -> H$
+    + $K <-> A$
+    + $(A or H) -> K$
 ]
 
 == 23
@@ -124,14 +124,14 @@
             implies(A, B),
             not A or B,
         ),
-        label: $(A => B) <=> A' or B$
+        label: $(A -> B) <-> A' or B$
     )
     #truthTable(
         (A, B, C) => implies(
             (A and B) or C,
             A and (B or C)
         ),
-        label: $(A and B) or C => A and (B or C)$
+        label: $(A and B) or C -> A and (B or C)$
     )
     #truthTable(
         (A, B, C) => A and not (not A or not B),
@@ -142,7 +142,7 @@
             A and B,
             not A
         ),
-        label: $A and B => A'$
+        label: $A and B -> A'$
     )
     #truthTable(
         (A, B, C) => implies(
@@ -152,7 +152,7 @@
                 (B or C)
             )
         ),
-        label: $(A => B) => ((A or C) => (B or C))$
+        label: $(A -> B) -> ((A or C) -> (B or C))$
     )
 ]
 
@@ -161,7 +161,7 @@
 == 9
 
 + $A$ is a hypothesis.
-+ $B => C$ is a hypothesis.
++ $B -> C$ is a hypothesis.
 + $B$ is assumed for deduction.
 + $C$ by modus ponens of 2 and 3.
 + $A and C$ by conjunction of 1 and 4.
@@ -169,15 +169,15 @@
 == 10
 
 + $B$ is a hypothesis.
-+ $(B and C) => A'$ is a hypothesis.
-+ $B => C$ is a hypothesis.
++ $(B and C) -> A'$ is a hypothesis.
++ $B -> C$ is a hypothesis.
 + $C$ by modus ponens of 1 and 3.
 + $B and C$ by conjunction of 1 and 4.
 + $A'$ by modus ponens of 5 and 2.
 
 == 11
 
-+ $A => (B or C)$ is a hypothesis.
++ $A -> (B or C)$ is a hypothesis.
 + $B'$ is a hypothesis.
 + $C'$ is a hypothesis.
 + $B' and C'$ by conjunction of 2 and 3.
@@ -188,43 +188,43 @@
 
 + $A'$ is a hypothesis.
 + $B$ is a hypothesis.
-+ $B => A or C$ is a hypothesis.
++ $B -> A or C$ is a hypothesis.
 + $A or C$ by modus ponens of 2 and 3.
 + $(A')' or C$ by the equivalence of $(A')'$ and $A$.
-+ $A' => C$ by disjunctive syllogism of 1 and 5.
++ $A' -> C$ by disjunctive syllogism of 1 and 5.
 + $C$ by modus ponens of 1 and 6.
 
 == 14
 
 + $A'$, hyp.
-+ $B => A$, hyp.
++ $B -> A$, hyp.
 + $B'$, mt.
 
 == 16
 
-+ $(C => D) => C$, hyp.
-+ $C => D$, hyp.
++ $(C -> D) -> C$, hyp.
++ $C -> D$, hyp.
 + $C$, mp, 1, 2.
 + $D$, mp, 2, 3.
 
 == 18
 
-+ $A => (B => C)$, hyp.
++ $A -> (B -> C)$, hyp.
 + $A or D'$, hyp.
 + $B$, hyp.
 + $D$, hyp.
 + $A$, ds, 2, 4.
-+ $B => C$, mp, 1, 5.
++ $B -> C$, mp, 1, 5.
 + $C$, mp, 3, 6.
 
 == 20
 
-+ $A => B$, hyp.
-+ $B => (C => D)$, hyp.
-+ $A => (B => C)$, hyp.
++ $A -> B$, hyp.
++ $B -> (C -> D)$, hyp.
++ $A -> (B -> C)$, hyp.
 + $A$, hyp.
 + $B$, mp, 1, 4.
-+ $B => C$, mp, 3, 4.
++ $B -> C$, mp, 3, 4.
 + $C$, mp, 5, 6.
-+ $C => D$, mp, 2, 5.
++ $C -> D$, mp, 2, 5.
 + $D$, mp, 7, 8.
