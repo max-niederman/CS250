@@ -156,3 +156,75 @@
     )
 ]
 
+= Inference Rules
+
+== 9
+
++ $A$ is a hypothesis.
++ $B => C$ is a hypothesis.
++ $B$ is assumed for deduction.
++ $C$ by modus ponens of 2 and 3.
++ $A and C$ by conjunction of 1 and 4.
+
+== 10
+
++ $B$ is a hypothesis.
++ $(B and C) => A'$ is a hypothesis.
++ $B => C$ is a hypothesis.
++ $C$ by modus ponens of 1 and 3.
++ $B and C$ by conjunction of 1 and 4.
++ $A'$ by modus ponens of 5 and 2.
+
+== 11
+
++ $A => (B or C)$ is a hypothesis.
++ $B'$ is a hypothesis.
++ $C'$ is a hypothesis.
++ $B' and C'$ by conjunction of 2 and 3.
++ $(B or C)'$ by De Morgan's law applied to 4.
++ $A'$ by modus tollens of 1 and 5.
+
+== 12
+
++ $A'$ is a hypothesis.
++ $B$ is a hypothesis.
++ $B => A or C$ is a hypothesis.
++ $A or C$ by modus ponens of 2 and 3.
++ $(A')' or C$ by the equivalence of $(A')'$ and $A$.
++ $A' => C$ by disjunctive syllogism of 1 and 5.
++ $C$ by modus ponens of 1 and 6.
+
+== 14
+
++ $A'$, hyp.
++ $B => A$, hyp.
++ $B'$, mt.
+
+== 16
+
++ $(C => D) => C$, hyp.
++ $C => D$, hyp.
++ $C$, mp, 1, 2.
++ $D$, mp, 2, 3.
+
+== 18
+
++ $A => (B => C)$, hyp.
++ $A or D'$, hyp.
++ $B$, hyp.
++ $D$, hyp.
++ $A$, ds, 2, 4.
++ $B => C$, mp, 1, 5.
++ $C$, mp, 3, 6.
+
+== 20
+
++ $A => B$, hyp.
++ $B => (C => D)$, hyp.
++ $A => (B => C)$, hyp.
++ $A$, hyp.
++ $B$, mp, 1, 4.
++ $B => C$, mp, 3, 4.
++ $C$, mp, 5, 6.
++ $C => D$, mp, 2, 5.
++ $D$, mp, 7, 8.
