@@ -7,6 +7,7 @@
         title: title,
     )
     set page(
+        paper: "us-letter",
         numbering: (..nums) => "Niederman " + numbering("1/1", ..nums),
         number-align: center
     )
